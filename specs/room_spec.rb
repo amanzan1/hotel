@@ -10,7 +10,7 @@ describe "Room class" do
   describe "initialize" do
     before do
       @room_data = {
-        id: 8,
+        number: 8,
         cost: 800.00
 
         }
@@ -23,10 +23,21 @@ describe "Room class" do
       @room.must_be_kind_of Room
     end
 
+    it "stores an instance of number" do
+      @room.number.must_be_kind_of Fixnum
+    end
+
+    it "stores an instance of cost" do
+      @room.cost.must_be_kind_of Float
+    end
+
+     end
+
   end
 
-end
 
+
+#it returns the correct cost for a given date range
 
 #it  returns a correct number 1-20,
 
