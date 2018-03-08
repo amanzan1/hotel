@@ -3,7 +3,7 @@ SimpleCov.start
 
 require_relative 'spec_helper'
 
-
+#do I even need a room class
 
 describe "Room class" do
 
