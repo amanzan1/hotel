@@ -6,7 +6,7 @@
 
 class Reservation
 
-  attr_reader :room, :cost, :dates,
+  attr_reader :room_number, :cost, :start_date, :end_date
 
   def initialize(input)
     if input[:dates] == input[:dates]
@@ -17,9 +17,19 @@ class Reservation
 
     @room_number = input[:room_number]
     @cost = input[:cost]
-    @dates = input[:dates]
+    @start_date = input[start_date]
+    @end_date = input[end_date]
     @guest_names = input[:guest_names]
     # @reservation = reservation
+  end
+
+  def does_overlap(end_date,start_date)
+    if start_date > @end_date || end_date < @start_date
+      return false
+    else
+      return true
+
+    end
   end
 
 

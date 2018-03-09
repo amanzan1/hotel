@@ -16,21 +16,38 @@ describe "Administrator" do
     #     }
     #   end
         it "returns an array of rooms" do
-        admin = Administrator.new(7)
+        admin = Administrator.new()
         admin.list_rooms.must_be_kind_of Array
 
       end
 
       it "returns twenty rooms" do
-        admin = Administrator.new(24)
+        admin = Administrator.new()
         admin.list_rooms.length.must_equal 20
       end
 
         it "is contains an instance of room" do
-          admin = Administrator.new(8)
+          admin = Administrator.new()
           admin.list_rooms[3].must_be_kind_of Room
         end
     end
+
+  describe "availabity method" do
+    it " sees if a room is available" do
+      admin = Administrator.new()
+      check  = admin.availability(17, Date.parse('2008-07-13'),(Date.parse('2008-07-15')))
+      check must_be true
+    end
+  end
+
+
+
+
+
+
+
+
+
   end
 
 
